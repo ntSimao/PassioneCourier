@@ -19,7 +19,7 @@ public class Vehicle extends Destination {
         lastServiceDate = "16-03-2020";
         damage = "Paint cracks";
         status = "Daily use";
-        plate = 33025923;
+        plate = 3305923;
     }
 
     public String getType() {
