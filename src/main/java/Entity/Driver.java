@@ -1,38 +1,11 @@
 package Entity;
-import java.util.Date;
 
 public class Driver {
-private int driver_ID;
-private String name,license,mobile,email,address,userName,password;
-private boolean income;
-private Date DOB;
+public int driver_ID;
+public String name,license,mobile,email,address,userName,password;
+public boolean income;
+public date DOB;
 
-    public Driver driverBuild(){
-        Driver driver = new Driver();
-        driver.address = this.address;
-        driver.DOB = this.DOB;
-        driver.driver_ID = this.driver_ID;
-        driver.email = this.email;
-        driver.income = this.income;
-        driver.license = this.license;
-        driver.mobile = this.mobile;
-        driver.name = this.name;
-        driver.password = this.password;
-        driver.userName = this.userName;
-
-    return driver;}
-
-    //private Driver(Builder builder){
-    //not sure what to do here?
-    //}
-    private Driver(){}
-
-
-    private void fillLog(ProductDriver productDriver){
-        //need more clarification on what this method does
-    }
-
-    //getters and setters below
     private int getDriver_ID() {
         return driver_ID;
     }
@@ -105,12 +78,15 @@ private Date DOB;
         this.income = income;
     }
 
-    private Date getDOB() {
+    private date getDOB() {
         return DOB;
     }
 
-    private void setDOB(Date DOB) {
+    private void setDOB(date DOB) {
         this.DOB = DOB;
+    }
+    private void fillLog(ProductDriver productDriver){
+
     }
 }
 
