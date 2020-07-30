@@ -2,7 +2,7 @@ package Entity;
 
 import java.util.Date;
 
-public class Vehicle extends Destination {
+public class Vehicle {
     private String type;
     private int vehicle_ID;
     private double mileage;
