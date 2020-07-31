@@ -1,7 +1,7 @@
 package Entity;
-import java.util.Date;
 
 public class Driver {
+<<<<<<< HEAD
     private int driver_ID;
     private String name, license, mobile, email, address, userName, password;
     private boolean income;
@@ -24,6 +24,14 @@ public class Driver {
 
 
     public int getDriver_ID() {
+=======
+public int driver_ID;
+public String name,license,mobile,email,address,userName,password;
+public boolean income;
+public int DOB;
+
+    private int getDriver_ID() {
+>>>>>>> bbe7b40f69c21664acdf95a74def23bb232d98f2
         return driver_ID;
     }
 
@@ -59,6 +67,7 @@ public class Driver {
         return income;
     }
 
+<<<<<<< HEAD
     public Date getDOB() {
         return DOB;
     }
@@ -163,6 +172,21 @@ public class Driver {
 
 
 
+
+=======
+    private void setIncome(boolean income) {
+        this.income = income;
+    }
+
+    private int getDOB() {
+        return DOB;
+    }
+
+    private void setDOB(int DOB) {
+        this.DOB = DOB;
+>>>>>>> bbe7b40f69c21664acdf95a74def23bb232d98f2
+    }
+    private void fillLog(ProductDriver productDriver){
 
     }
 }
