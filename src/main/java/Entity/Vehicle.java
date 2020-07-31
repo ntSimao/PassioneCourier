@@ -19,7 +19,7 @@ public class Vehicle {
         lastServiceDate = "16-03-2020";
         damage = "Paint cracks";
         status = "Daily use";
-        plate = 3305923;
+        plate = 33025923;
     }
 
     public String getType() {
