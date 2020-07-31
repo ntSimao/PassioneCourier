@@ -1,6 +1,5 @@
 package Entity;
-
-        import java.time.*;
+import java.time.*;
 
 /**
  *

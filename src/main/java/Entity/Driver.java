@@ -1,7 +1,9 @@
 package Entity;
 
+import java.util.Date;
+
 public class Driver {
-<<<<<<< HEAD
+
     private int driver_ID;
     private String name, license, mobile, email, address, userName, password;
     private boolean income;
@@ -11,27 +13,18 @@ public class Driver {
         this.address = builder.address;
         this.DOB = builder.DOB;
         this.driver_ID = builder.driver_ID;
-        ;
         this.email = builder.email;
         this.income = builder.income;
         this.license = builder.license;
         this.mobile = builder.mobile;
         this.name = builder.name;
         this.password = builder.password;
-        ;
         this.userName = builder.userName;
     }
 
 
-    public int getDriver_ID() {
-=======
-public int driver_ID;
-public String name,license,mobile,email,address,userName,password;
-public boolean income;
-public int DOB;
-
     private int getDriver_ID() {
->>>>>>> bbe7b40f69c21664acdf95a74def23bb232d98f2
+
         return driver_ID;
     }
 
@@ -67,7 +60,6 @@ public int DOB;
         return income;
     }
 
-<<<<<<< HEAD
     public Date getDOB() {
         return DOB;
     }
@@ -92,54 +84,63 @@ public int DOB;
                 '}';
     }
 
-    public static class driverBuild (Builder builder){
+    public static class driverBuild(Builder builder) {
         private int driver_ID;
         private String name, license, mobile, email, address, userName, password;
         private boolean income;
         private Date DOB;
 
-        public driverBuild setDriverID(int ID){
+        public driverBuild setDriverID(int ID) {
             this.driver_ID = ID;
             return this;
         }
-        public driverBuild setName(String name){
+
+        public driverBuild setName(String name) {
             this.name = name;
             return this;
         }
-        public driverBuild setLicense(String license){
+
+        public driverBuild setLicense(String license) {
             this.license = license;
             return this;
         }
-        public driverBuild setMobile(String mobile){
+
+        public driverBuild setMobile(String mobile) {
             this.mobile = mobile;
             return this;
         }
-        public driverBuild setEmail(String email){
+
+        public driverBuild setEmail(String email) {
             this.email = email;
             return this;
         }
-        public driverBuild setAddress(String address){
+
+        public driverBuild setAddress(String address) {
             this.address = address;
             return this;
         }
-        public driverBuild setUserName(String userName){
+
+        public driverBuild setUserName(String userName) {
             this.userName = userName;
             return this;
         }
-        public driverBuild setPassword(String password){
+
+        public driverBuild setPassword(String password) {
             this.password = password;
             return this;
         }
-        public driverBuild setIncome(boolean income){
+
+        public driverBuild setIncome(boolean income) {
             this.income = income;
             return this;
         }
-        public driverBuild setDateofBirth(Date DOB){
+
+        public driverBuild setDateOfBirth(Date DOB) {
             this.DOB = DOB;
             return this;
         }
 
-        public driverBuild(int ID, String name, String license, String mobile, String email, String address, String userName, String password, boolean income, Date DOB){
+        public driverBuild(int ID, String name, String license, String mobile, String email, String address, String userName, String password, boolean income, Date DOB) {
             this.driver_ID = ID;
             this.name = name;
             this.license = license;
@@ -152,7 +153,7 @@ public int DOB;
             this.DOB = DOB;
         }
 
-        public driverBuild copy(Driver driver){
+        public driverBuild copy(Driver driver) {
             this.driver_ID = driver.driver_ID;
             this.name = driver.name;
             this.license = driver.license;
@@ -166,27 +167,9 @@ public int DOB;
             return this;
         }
 
-        public Driver build(){
+        public Driver build() {
             return new Driver(this);
         }
-
-
-
-
-=======
-    private void setIncome(boolean income) {
-        this.income = income;
-    }
-
-    private int getDOB() {
-        return DOB;
-    }
-
-    private void setDOB(int DOB) {
-        this.DOB = DOB;
->>>>>>> bbe7b40f69c21664acdf95a74def23bb232d98f2
-    }
-    private void fillLog(ProductDriver productDriver){
 
     }
 }
