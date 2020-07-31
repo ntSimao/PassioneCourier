@@ -1,5 +1,6 @@
 package Entity;
 
+
 public class Vehicle {
     private String type;
     private int vehicle_id;
@@ -10,13 +11,13 @@ public class Vehicle {
     private int plate;
 
     public Vehicle(String type, int vehicle_id, double mileage, String lastServiceDate, String damage, String status, int plate) {
-        this.type = type;
-        this.vehicle_id = vehicle_id;
-        this.mileage = mileage;
-        this.lastServiceDate = lastServiceDate;
-        this.damage = damage;
-        this.status = status;
-        this.plate = plate;
+        this.type = "VolvoTruck";;
+        this.vehicle_id = 23;
+        this.mileage = 45380.0;
+        this.lastServiceDate = "16-03-2020";;
+        this.damage = "Paint cracks";
+        this.status = "Daily use";
+        this.plate = 33025923;
     }
 
     public String getType() {
@@ -49,7 +50,7 @@ public class Vehicle {
 
     @Override
     public String toString() {
-        return "VehicleBuilder{" +
+        return "Vehicle{" +
                 "type='" + type + '\'' +
                 ", vehicle_id=" + vehicle_id +
                 ", mileage=" + mileage +
@@ -95,7 +96,7 @@ public class Vehicle {
         return this;
     }
 
-//    public Vehicle createVehicle() {
-//        return new Vehicle(type, vehicle_id, mileage, lastServiceDate, damage, status, plate);
-//    }
+        public Vehicle createVehicle() {
+            return new Vehicle(type, vehicle_id, mileage, lastServiceDate, damage, status, plate);
+        }
 }
