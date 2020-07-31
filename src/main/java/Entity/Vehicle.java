@@ -1,33 +1,30 @@
 package Entity;
 
-import java.util.Date;
-
 public class Vehicle {
     private String type;
-    private int vehicle_ID;
+    private int vehicle_id;
     private double mileage;
     private String lastServiceDate;
     private String damage;
     private String status;
     private int plate;
 
-    public Vehicle(String typ, int vehicleID, double mile, Date lastServDate, String dmg, String stat, int plat) {
-        //super(zip_code);
-        type = "VolvoTruck";
-        vehicle_ID = 23;
-        mileage = 45380.0;
-        lastServiceDate = "16-03-2020";
-        damage = "Paint cracks";
-        status = "Daily use";
-        plate = 33025923;
+    public Vehicle(String type, int vehicle_id, double mileage, String lastServiceDate, String damage, String status, int plate) {
+        this.type = type;
+        this.vehicle_id = vehicle_id;
+        this.mileage = mileage;
+        this.lastServiceDate = lastServiceDate;
+        this.damage = damage;
+        this.status = status;
+        this.plate = plate;
     }
 
     public String getType() {
         return type;
     }
 
-    public int getVehicle_ID() {
-        return vehicle_ID;
+    public int getVehicle_id() {
+        return vehicle_id;
     }
 
     public double getMileage() {
@@ -50,39 +47,55 @@ public class Vehicle {
         return plate;
     }
 
-    public void setType(String typ) {
-        type = typ;
+    @Override
+    public String toString() {
+        return "VehicleBuilder{" +
+                "type='" + type + '\'' +
+                ", vehicle_id=" + vehicle_id +
+                ", mileage=" + mileage +
+                ", lastServiceDate='" + lastServiceDate + '\'' +
+                ", damage='" + damage + '\'' +
+                ", status='" + status + '\'' +
+                ", plate=" + plate +
+                '}';
     }
 
-    public void setVehicle_ID(int vehicleID)
-    {
-        vehicle_ID = vehicleID;
+    public Vehicle setType(String type) {
+        this.type = type;
+        return this;
     }
 
-    public void setMileage(double mile)
-    {
-        mileage = mile;
+    public Vehicle setVehicle_ID(int vehicle_id) {
+        this.vehicle_id = vehicle_id;
+        return this;
     }
 
-    public void setLastServiceDate(String Date)
-    {
-        lastServiceDate = Date;
+    public Vehicle setMileage(double mileage) {
+        this.mileage = mileage;
+        return this;
     }
 
-    public void setDamage(String dmg)
-    {
-        damage = dmg;
+    public Vehicle setLastServiceDate(String lastServiceDate) {
+        this.lastServiceDate = lastServiceDate;
+        return this;
     }
 
-    public void setStatus(String stat)
-    {
-        status = stat;
+    public Vehicle setDamage(String damage) {
+        this.damage = damage;
+        return this;
     }
 
-    public void setPlate(int plat)
-    {
-        plate = plat;
+    public Vehicle setStatus(String status) {
+        this.status = status;
+        return this;
     }
 
+    public Vehicle setPlate(int plate) {
+        this.plate = plate;
+        return this;
+    }
+
+//    public Vehicle createVehicle() {
+//        return new Vehicle(type, vehicle_id, mileage, lastServiceDate, damage, status, plate);
+//    }
 }
-

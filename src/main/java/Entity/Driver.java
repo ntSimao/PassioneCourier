@@ -4,7 +4,7 @@ public class Driver {
 public int driver_ID;
 public String name,license,mobile,email,address,userName,password;
 public boolean income;
-public date DOB;
+public int DOB;
 
     private int getDriver_ID() {
         return driver_ID;
@@ -78,11 +78,11 @@ public date DOB;
         this.income = income;
     }
 
-    private date getDOB() {
+    private int getDOB() {
         return DOB;
     }
 
-    private void setDOB(date DOB) {
+    private void setDOB(int DOB) {
         this.DOB = DOB;
     }
     private void fillLog(ProductDriver productDriver){
