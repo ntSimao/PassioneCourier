@@ -1,92 +1,178 @@
 package Entity;
 
+import java.util.Date;
+
 public class Driver {
-public int driver_ID;
-public String name,license,mobile,email,address,userName,password;
-public boolean income;
-public int DOB;
+
+    private int driver_ID;
+    private String name, license, mobile, email, address, userName, password;
+    private boolean income;
+    private Date DOB;
+
+    private Driver(driverBuild builder) {
+        this.address = builder.address;
+        this.DOB = builder.DOB;
+        this.driver_ID = builder.driver_ID;
+        this.email = builder.email;
+        this.income = builder.income;
+        this.license = builder.license;
+        this.mobile = builder.mobile;
+        this.name = builder.name;
+        this.password = builder.password;
+        this.userName = builder.userName;
+    }
+
 
     private int getDriver_ID() {
+
         return driver_ID;
     }
 
-    private void setDriver_ID(int driver_ID) {
-        this.driver_ID = driver_ID;
-    }
-
-    private String getName() {
+    public String getName() {
         return name;
     }
 
-    private void setName(String name) {
-        this.name = name;
-    }
-
-    private String getLicense() {
+    public String getLicense() {
         return license;
     }
 
-    private void setLicense(String license) {
-        this.license = license;
-    }
-
-    private String getMobile() {
+    public String getMobile() {
         return mobile;
     }
 
-    private void setMobile(String mobile) {
-        this.mobile = mobile;
-    }
-
-    private String getEmail() {
+    public String getEmail() {
         return email;
     }
 
-    private void setEmail(String email) {
-        this.email = email;
-    }
-
-    private String getAddress() {
+    public String getAddress() {
         return address;
     }
 
-    private void setAddress(String address) {
-        this.address = address;
-    }
-
-    private String getUserName() {
+    public String getUserName() {
         return userName;
     }
 
-    private void setUserName(String userName) {
-        this.userName = userName;
-    }
-
-    private String getPassword() {
+    public String getPassword() {
         return password;
     }
 
-    private void setPassword(String password) {
-        this.password = password;
-    }
-
-    private boolean isIncome() {
+    public boolean isIncome() {
         return income;
     }
 
-    private void setIncome(boolean income) {
-        this.income = income;
-    }
-
-    private int getDOB() {
+    public Date getDOB() {
         return DOB;
     }
 
-    private void setDOB(int DOB) {
-        this.DOB = DOB;
+    private void fillLog() {
+
     }
-    private void fillLog(ProductDriver productDriver){
+
+    @Override
+    public String toString() {
+        return "Driver{" +
+                "driver_ID=" + driver_ID +
+                ", name='" + name + '\'' +
+                ", license='" + license + '\'' +
+                ", mobile='" + mobile + '\'' +
+                ", email='" + email + '\'' +
+                ", address='" + address + '\'' +
+                ", userName='" + userName + '\'' +
+                ", password='" + password + '\'' +
+                ", income=" + income +
+                ", DOB=" + DOB +
+                '}';
+    }
+
+    public static class driverBuild(Builder builder) {
+        private int driver_ID;
+        private String name, license, mobile, email, address, userName, password;
+        private boolean income;
+        private Date DOB;
+
+        public driverBuild setDriverID(int ID) {
+            this.driver_ID = ID;
+            return this;
+        }
+
+        public driverBuild setName(String name) {
+            this.name = name;
+            return this;
+        }
+
+        public driverBuild setLicense(String license) {
+            this.license = license;
+            return this;
+        }
+
+        public driverBuild setMobile(String mobile) {
+            this.mobile = mobile;
+            return this;
+        }
+
+        public driverBuild setEmail(String email) {
+            this.email = email;
+            return this;
+        }
+
+        public driverBuild setAddress(String address) {
+            this.address = address;
+            return this;
+        }
+
+        public driverBuild setUserName(String userName) {
+            this.userName = userName;
+            return this;
+        }
+
+        public driverBuild setPassword(String password) {
+            this.password = password;
+            return this;
+        }
+
+        public driverBuild setIncome(boolean income) {
+            this.income = income;
+            return this;
+        }
+
+        public driverBuild setDateOfBirth(Date DOB) {
+            this.DOB = DOB;
+            return this;
+        }
+
+        public driverBuild(int ID, String name, String license, String mobile, String email, String address, String userName, String password, boolean income, Date DOB) {
+            this.driver_ID = ID;
+            this.name = name;
+            this.license = license;
+            this.mobile = mobile;
+            this.email = email;
+            this.address = address;
+            this.userName = userName;
+            this.password = password;
+            this.income = income;
+            this.DOB = DOB;
+        }
+
+        public driverBuild copy(Driver driver) {
+            this.driver_ID = driver.driver_ID;
+            this.name = driver.name;
+            this.license = driver.license;
+            this.mobile = driver.mobile;
+            this.email = driver.email;
+            this.address = driver.address;
+            this.userName = driver.userName;
+            this.password = driver.password;
+            this.income = driver.income;
+            this.DOB = driver.DOB;
+            return this;
+        }
+
+        public Driver build() {
+            return new Driver(this);
+        }
 
     }
 }
+
+
 
