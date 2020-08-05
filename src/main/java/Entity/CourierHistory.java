@@ -135,7 +135,7 @@ public class CourierHistory {
             return this;
         }
 
-        public Builder copy(CourierHistory courierHistory){
+        public Builder copy(CourierHistory courierHistory) {
             this.name = courierHistory.name;
             this.from_location_ID = courierHistory.from_location_ID;
             this.to_location_ID = courierHistory.to_location_ID;
