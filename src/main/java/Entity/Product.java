@@ -5,7 +5,7 @@ public class Product {
     private int product_ID;
     private String product_name, product_description, product_type;
 
-    private Product(Builder builder){
+    private Product(Builder builder) {
         this.product_ID = builder.product_ID;
         this.product_name = builder.product_name;
         this.product_description = builder.product_description;
@@ -38,7 +38,7 @@ public class Product {
                 '}';
     }
 
-    public static class Builder{
+    public static class Builder {
         private int product_ID;
         private String product_name, product_description, product_type;
 
@@ -62,7 +62,7 @@ public class Product {
             return this;
         }
 
-        public Builder copy(Product product){
+        public Builder copy(Product product) {
             this.product_ID = product.product_ID;
             this.product_name = product.product_name;
             this.product_description = product.product_description;
@@ -70,7 +70,7 @@ public class Product {
             return this;
         }
 
-        public Product build(){
+        public Product build() {
             return new Product(this);
 
         }
