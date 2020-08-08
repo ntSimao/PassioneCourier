@@ -70,6 +70,10 @@ public class Employer {
             return this;
         }
 
+        public EmployerBuilder(){
+
+        }
+
         public EmployerBuilder(int id, String lnm, String fnm){
 
             this.emp_ID = id;

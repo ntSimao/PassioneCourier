@@ -41,6 +41,8 @@ public class Device {
     public static class DeviceBuilder {
 
         //instances
+        private int device_ID;
+        private String type;
 
         public DeviceBuilder setDeviceID(int devID) {
             this.device_ID = devID;
@@ -52,9 +54,12 @@ public class Device {
             return this;
         }
 
+        public DeviceBuilder() {
+
+        }
+
 
         public DeviceBuilder(int devID, String typ) {
-
             this.device_ID = devID;
             this.type = typ;
         }
