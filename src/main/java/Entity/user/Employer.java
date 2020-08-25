@@ -1,6 +1,6 @@
-package Entity;
+package Entity.user;
 
-import java.util.List;
+
 public class Employer {
 
     //instance variables
@@ -17,7 +17,7 @@ public class Employer {
     }
 
     //getters
-    public int getEmployeeId() {
+    public int getEmployerId() {
         return emp_ID;
     }
 
@@ -55,7 +55,7 @@ public class Employer {
         private String lName;
         private String fName;
 
-        public EmployerBuilder setEmployeeID(int id){
+        public EmployerBuilder setEmployerID(int id){
             this.emp_ID = id;
             return this;
         }

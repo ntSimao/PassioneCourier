@@ -1,8 +1,6 @@
-package factory;
+package Factory.unlabeled;
 
-import Entity.Product;
-
-import java.util.UUID;
+import Entity.unlabeled.Product;
 
 public class ProductFactory {
 

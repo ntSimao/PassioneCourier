@@ -1,4 +1,4 @@
-package Entity;
+package Entity.unlabeled;
 
 public class Destination {
     private String name;

@@ -1,7 +1,6 @@
-package factory;
+package Factory.unlabeled;
 
-import Entity.CourierHistory;
-import Entity.Product;
+import Entity.unlabeled.CourierHistory;
 
 import java.time.LocalDate;
 

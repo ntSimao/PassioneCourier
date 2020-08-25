@@ -1,10 +1,9 @@
-package Factory;
+package Factory.user;
 
-import Entity.Employer;
+import Entity.user.Employer;
+import Factory.user.EmployerFactory;
 import org.junit.Assert;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 public class EmployerFactoryTest {
 

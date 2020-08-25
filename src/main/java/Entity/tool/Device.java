@@ -1,4 +1,4 @@
-package Entity;
+package Entity.tool;
 
 public class Device {
 

@@ -1,11 +1,9 @@
-package Factory;
+package Factory.tool;
 
-import Entity.Device;
-import Entity.Employer;
+import Entity.tool.Device;
+import Factory.tool.DeviceFactory;
 import org.junit.Assert;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 public class DeviceFactoryTest {
 

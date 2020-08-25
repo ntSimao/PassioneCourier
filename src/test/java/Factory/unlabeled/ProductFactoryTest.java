@@ -1,10 +1,7 @@
-package factory;
+package Factory.unlabeled;
 
-import Entity.Product;
-import org.junit.Assert;
+import Entity.unlabeled.Product;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 public class ProductFactoryTest {
 

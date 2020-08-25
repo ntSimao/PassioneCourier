@@ -1,6 +1,6 @@
-package Factory;
+package Factory.tool;
 
-import Entity.Device;
+import Entity.tool.Device;
 import java.util.Random;
 
 public class DeviceFactory {
