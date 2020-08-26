@@ -4,8 +4,9 @@ import Entity.unlabeled.Route;
 
 public class RouteFactory {
 
-    public static Route createRoute(int route_id, int product_id, int from_location_id, int to_location_id, int price, int days){
-        Route route = new Route.Builder()
+    public static Route createRoute(int route_id, int product_id, int from_location_id,
+                                    int to_location_id, int price, int days){
+        return new Route.Builder()
                 .setRoute_id(route_id)
                 .setProduct_id(product_id)
                 .setFromLocation_id(from_location_id)
@@ -13,6 +14,5 @@ public class RouteFactory {
                 .setPrice(price)
                 .setDays(days)
                 .build();
-        return route;
     }
 }

@@ -6,7 +6,7 @@ public class Destination {
     private String country;
     private int zip_code;
 
-    public Destination(Destination builder) {
+    public Destination(DestinationBuilder builder) {
         this.name = builder.name;
         this.state = builder.state;
         this.country = builder.country;
@@ -38,27 +38,41 @@ public class Destination {
                 ", zip_code=" + zip_code +
                 '}';
     }
+    public static class DestinationBuilder {
 
-    public Destination setName(String name) {
-        this.name = name;
-        return this;
-    }
+        private String name;
+        private String state;
+        private String country;
+        private int zip_code;
 
-    public Destination setState(String state) {
-        this.state = state;
-        return this;
-    }
+        public DestinationBuilder(String name, String state, String country, int zip_code) {
+        }
 
-    public Destination setCountry(String country) {
-        this.country = country;
-        return this;
-    }
+        public DestinationBuilder() {
 
-    public Destination setZip_code(int zip_code) {
-        this.zip_code = zip_code;
-        return this;
-    }
-    public Destination createDestination() {
-        return new Destination(this);
+        }
+
+        public DestinationBuilder setName(String name) {
+            this.name = name;
+            return this;
+        }
+
+        public DestinationBuilder setState(String state) {
+            this.state = state;
+            return this;
+        }
+
+        public DestinationBuilder setCountry(String country) {
+            this.country = country;
+            return this;
+        }
+
+        public DestinationBuilder setZip_code(int zip_code) {
+            this.zip_code = zip_code;
+            return this;
+        }
+
+        public Destination build() { return new Destination(this);
+        }
     }
 }
