@@ -9,7 +9,7 @@ public class Vehicle {
     private String status;
     private int plate;
 
-    public Vehicle(Vehicle builder) {
+    public Vehicle(VehicleBuilder builder) {
         this.type = builder.type;
         this.vehicle_id = builder.vehicle_id;
         this.mileage = builder.mileage;
@@ -59,7 +59,8 @@ public class Vehicle {
                 ", plate=" + plate +
                 '}';
     }
-    public static class Builder {
+
+    public static class VehicleBuilder {
 
         private String type;
         private int vehicle_id;
@@ -68,43 +69,50 @@ public class Vehicle {
         private String damage;
         private String status;
         private int plate;
-    }
 
-    public Vehicle setType(String type) {
-        this.type = type;
-        return this;
-    }
+        public VehicleBuilder(String type,int vehicle_id,double mileage,String lastServiceDate,String damage,String status,int plate){}
 
-    public Vehicle setVehicle_ID(int vehicle_id) {
-        this.vehicle_id = vehicle_id;
-        return this;
-    }
+        public VehicleBuilder(){
 
-    public Vehicle setMileage(double mileage) {
-        this.mileage = mileage;
-        return this;
-    }
+        }
 
-    public Vehicle setLastServiceDate(String lastServiceDate) {
-        this.lastServiceDate = lastServiceDate;
-        return this;
-    }
+        public VehicleBuilder setType(String type) {
+            this.type = type;
+            return this;
+        }
 
-    public Vehicle setDamage(String damage) {
-        this.damage = damage;
-        return this;
-    }
+        public VehicleBuilder setVehicle_ID(int vehicle_id) {
+            this.vehicle_id = vehicle_id;
+            return this;
+        }
 
-    public Vehicle setStatus(String status) {
-        this.status = status;
-        return this;
-    }
+        public VehicleBuilder setMileage(double mileage) {
+            this.mileage = mileage;
+            return this;
+        }
 
-    public Vehicle setPlate(int plate) {
-        this.plate = plate;
-        return this;
-    }
-    public Vehicle createVehicle() {
-        return new Vehicle(this);
+        public VehicleBuilder setLastServiceDate(String lastServiceDate) {
+            this.lastServiceDate = lastServiceDate;
+            return this;
+        }
+
+        public VehicleBuilder setDamage(String damage) {
+            this.damage = damage;
+            return this;
+        }
+
+        public VehicleBuilder setStatus(String status) {
+            this.status = status;
+            return this;
+        }
+
+        public VehicleBuilder setPlate(int plate) {
+            this.plate = plate;
+            return this;
+        }
+
+        public Vehicle createVehicle() {
+            return new Vehicle(this);
+        }
     }
 }
