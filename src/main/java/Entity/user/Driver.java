@@ -5,11 +5,13 @@ import java.util.Date;
 
 public class Driver {
 
+    //instance
     private int driver_ID;
     private String name,license,mobile,email,address,userName,password;
     private double income;
     private LocalDate DOB;
 
+    //constructor
     private Driver(DriverBuilder builder){
         this.driver_ID = builder.driver_ID;
         this.name = builder.name;
@@ -27,42 +29,58 @@ public class Driver {
     }
 
     //getters
-    private int getDriver_ID() {
+    public int getDriver_ID() {
         return driver_ID;
     }
 
-    private String getName() {
+    public String getName() {
         return name;
     }
 
-    private String getLicense() {
+    public String getLicense() {
         return license;
     }
 
-    private String getMobile() {
+    public String getMobile() {
         return mobile;
     }
 
-    private String getEmail() {
+    public String getEmail() {
         return email;
     }
 
-    private String getAddress() {
+    public String getAddress() {
         return address;
     }
 
-    private String getUserName() {
+    public String getUserName() {
         return userName;
     }
 
-    private String getPassword() {
+    public String getPassword() {
         return password;
     }
-    private LocalDate getDOB () {
+    public LocalDate getDOB () {
         return DOB;
     }
-    private double isIncome () {
+    public double getIncome () {
         return income;
+    }
+
+    @Override
+    public String toString() {
+        return "Driver{" +
+                "driver_ID=" + driver_ID +
+                ", name='" + name + '\'' +
+                ", license='" + license + '\'' +
+                ", mobile='" + mobile + '\'' +
+                ", email='" + email + '\'' +
+                ", address='" + address + '\'' +
+                ", userName='" + userName + '\'' +
+                ", password='" + password + '\'' +
+                ", income=" + income +
+                ", DOB=" + DOB +
+                '}';
     }
 
     public static class DriverBuilder
@@ -71,41 +89,45 @@ public class Driver {
         private int driver_ID;
         private String name,license,mobile,email,address,userName,password;
         private double income;
-        private Date DOB;
+        private LocalDate DOB;
 
-        private DriverBuilder setName(String name){
+        public DriverBuilder setName(String name){
             this.name = name;
         return this;}
 
-        private DriverBuilder setDriver_ID(int driver_ID) {
+        public DriverBuilder setDriver_ID(int driver_ID) {
             this.driver_ID = driver_ID;
         return this;}
 
-        private DriverBuilder setLicense(String license) {
+        public DriverBuilder setLicense(String license) {
             this.license = license;
         return this;}
 
-        private DriverBuilder setMobile(String mobile) {
+        public DriverBuilder setMobile(String mobile) {
             this.mobile = mobile;
         return this;}
 
-        private DriverBuilder setEmail(String email) {
+        public DriverBuilder setAddress(String address){
+            this.address = address;
+            return this;}
+
+        public DriverBuilder setEmail(String email) {
             this.email = email;
         return this;}
 
-        private DriverBuilder setUserName(String userName) {
+        public DriverBuilder setUserName(String userName) {
             this.userName = userName;
         return this;}
 
-        private DriverBuilder setPassword (String password){
+        public DriverBuilder setPassword(String password){
         this.password = password;
         return this;}
 
-    private DriverBuilder setIncome (double income){
+    public DriverBuilder setIncome(double income){
         this.income = income;
         return this;}
 
-        private DriverBuilder setDOB (Date DOB){
+        public DriverBuilder setDOB(LocalDate DOB){
         this.DOB = DOB;
         return this;}
 
@@ -113,18 +135,7 @@ public class Driver {
         public DriverBuilder(){
         }
 
-    public DriverBuilder(int driver_id,String name,String license, String mobile,
-                         String email,String address, String userName,String password)
-    {
-           this.driver_ID = driver_id;
-           this.name = name;
-           this.license = license;
-           this.mobile = mobile;
-           this.email = email;
-           this.address = address;
-           this.userName = userName;
-           this.password = password;
-    }
+
     public DriverBuilder copy(Driver driver){
         this.driver_ID = driver.driver_ID;
         this.name = driver.name;
