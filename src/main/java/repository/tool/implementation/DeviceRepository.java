@@ -1,6 +1,7 @@
 package repository.tool.implementation;
 
 import Entity.tool.Device;
+import Entity.unlabeled.Route;
 import repository.tool.DeviceRepositoryInterface;
 import java.util.HashSet;
 import java.util.Set;
@@ -55,6 +56,5 @@ public class DeviceRepository implements DeviceRepositoryInterface {
         if(myDevice != null){
             this.devDatabase.remove(myID);
         }
-
     }
 }
