@@ -4,9 +4,9 @@ import java.util.Random;
 
 public class VehicleFactory {
     public static Vehicle createVehicle(String type,double mileage,String lastServiceDate,
-                                        String damage,String status,int plate){
+                                        String damage,String status,String plate){
         Random rand = new Random();
-        int vehicleID = rand.nextInt(518162);
+        int vehicleID = rand.nextInt(8569473);
 
         Vehicle vehicle = new Vehicle.VehicleBuilder().setVehicle_ID(vehicleID).setType(type)
                 .setMileage(mileage).setLastServiceDate(lastServiceDate)

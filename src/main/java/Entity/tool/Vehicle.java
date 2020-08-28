@@ -7,7 +7,7 @@ public class Vehicle {
     private String lastServiceDate;
     private String damage;
     private String status;
-    private int plate;
+    private String plate;
 
     public Vehicle(VehicleBuilder builder) {
         this.type = builder.type;
@@ -43,7 +43,7 @@ public class Vehicle {
         return status;
     }
 
-    public int getPlate() {
+    public String getPlate() {
         return plate;
     }
 
@@ -68,7 +68,7 @@ public class Vehicle {
         private String lastServiceDate;
         private String damage;
         private String status;
-        private int plate;
+        private String plate;
 
         public VehicleBuilder(String type,int vehicle_id,double mileage,String lastServiceDate,String damage,String status,int plate){}
 
@@ -106,7 +106,7 @@ public class Vehicle {
             return this;
         }
 
-        public VehicleBuilder setPlate(int plate) {
+        public VehicleBuilder setPlate(String plate) {
             this.plate = plate;
             return this;
         }
