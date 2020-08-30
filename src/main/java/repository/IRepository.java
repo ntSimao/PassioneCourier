@@ -2,7 +2,7 @@ package repository;
 
 import Entity.unlabeled.Route;
 
-public interface IRepository<Type, ID> {
+public interface  IRepository<Type, ID> {
 
     Type create(Type t);
     Type read(ID myID);
