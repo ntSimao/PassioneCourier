@@ -1,10 +1,12 @@
 package Entity;
 
+import java.time.LocalDate;
+
 public class Driver {
 public int driver_ID;
 public String name,license,mobile,email,address,userName,password;
 public boolean income;
-public date DOB;
+public LocalDate DOB;
 
     private int getDriver_ID() {
         return driver_ID;
@@ -78,14 +80,14 @@ public date DOB;
         this.income = income;
     }
 
-    private date getDOB() {
+    private LocalDate getDOB() {
         return DOB;
     }
 
-    private void setDOB(date DOB) {
+    private void setDOB(LocalDate DOB) {
         this.DOB = DOB;
     }
-    private void fillLog(ProductDriver productDriver){
+   /* private void fillLog(ProductDriver productDriver){
 
-    }
+    }*/
 }
