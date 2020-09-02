@@ -47,9 +47,10 @@ public class CourierHistoryRepository implements CourierHistoryRepositoryInterfa
     }
 
     @Override
-    public void delete(Character myID) {
+    public boolean delete(Character myID) {
         CourierHistory courierHistory = read(myID);
         if (courierHistory != null) this.courierHistoryDB.remove(courierHistory);
+        return this.courierHistoryDB.remove(courierHistory);
 
     }
 }

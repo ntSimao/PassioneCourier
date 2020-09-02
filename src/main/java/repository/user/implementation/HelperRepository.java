@@ -52,11 +52,12 @@ public class HelperRepository implements HelperRepositoryInterface {
     }
 
     @Override
-    public void delete(Integer id) {
+    public boolean delete(Integer id) {
 
         Helper delHelp = read(id);
         if (delHelp != null)
             this.helpDatabase.remove(delHelp);
+        return this.helpDatabase.remove(delHelp);
     }
 
     @Override

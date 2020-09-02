@@ -46,11 +46,12 @@ public class DestinationRepository implements DestinationRepositoryInterface {
     }
 
     @Override
-    public void delete(String myID) {
+    public boolean delete(String myID) {
         Destination delete = read(myID);
         if(delete != null){
             this.destinationsDB.remove(myID);
         }
+        return this.destinationsDB.remove(myID);
 
     }
 }

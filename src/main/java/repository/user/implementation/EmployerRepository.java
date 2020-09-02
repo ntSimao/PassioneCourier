@@ -49,11 +49,12 @@ public class EmployerRepository implements EmployerRepositoryInterface {
     }
 
     @Override
-    public void delete(Integer myID) {
+    public boolean delete(Integer myID) {
         Employer myEmployer = read(myID);
         if(myEmployer != null){
             this.empDataBase.remove(myID);
         }
+        return this.empDataBase.remove(myID);
     }
 
     @Override

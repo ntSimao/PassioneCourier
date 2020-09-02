@@ -50,11 +50,12 @@ public class DeviceRepository implements DeviceRepositoryInterface {
     }
 
     @Override
-    public void delete(Integer myID) {
+    public boolean delete(Integer myID) {
         Device myDevice = read(myID);
         if(myDevice != null){
-            this.devDatabase.remove(myID);
+             this.devDatabase.remove(myID);
         }
+        return this.devDatabase.remove(myID);
     }
 
     @Override

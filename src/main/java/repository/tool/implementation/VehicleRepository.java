@@ -51,11 +51,12 @@ public class VehicleRepository implements VehicleRepositoryInterface {
     }
 
     @Override
-    public void delete(Integer myID) {
+    public boolean delete(Integer myID) {
         Vehicle delete = read(myID);
         if(delete != null){
             this.vehicleDB.remove(myID);
         }
+        return this.vehicleDB.remove(myID);
 
     }
 }
