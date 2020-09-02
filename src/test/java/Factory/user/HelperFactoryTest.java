@@ -1,10 +1,10 @@
-package Factory;
+package Factory.user;
 
-import Entity.Helper;
+import Entity.user.Helper;
+import Factory.user.HelperFactory;
 import org.junit.Test;
 
 import java.time.LocalDate;
-import java.time.Month;
 
 import static org.junit.Assert.*;
 import static org.junit.Assert.assertEquals;

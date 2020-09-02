@@ -1,6 +1,6 @@
-package Factory;
+package Factory.user;
 
-import Entity.Helper;
+import Entity.user.Helper;
 
 import java.time.LocalDate;
 
