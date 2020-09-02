@@ -1,6 +1,5 @@
 package repository.user.implementation;
 
-import Entity.unlabeled.Route;
 import Entity.user.Employer;
 import repository.user.EmployerRepositoryInterface;
 import java.util.HashSet;
@@ -55,6 +54,11 @@ public class EmployerRepository implements EmployerRepositoryInterface {
         if(myEmployer != null){
             this.empDataBase.remove(myID);
         }
+    }
+
+    @Override
+    public Set<Employer> getAll() {
+        return this.empDataBase;
     }
 }
 
