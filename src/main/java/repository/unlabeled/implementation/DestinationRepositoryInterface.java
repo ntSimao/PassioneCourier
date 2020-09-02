@@ -1,4 +1,10 @@
 package repository.unlabeled.implementation;
 
-public interface DestinationRepositoryInterface {
+import Entity.unlabeled.Destination;
+import repository.IRepository;
+
+import java.util.Set;
+
+public interface DestinationRepositoryInterface extends IRepository<Destination, String> {
+    Set<Destination> getAll();
 }

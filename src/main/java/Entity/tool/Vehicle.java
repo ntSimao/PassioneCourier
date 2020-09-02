@@ -114,5 +114,9 @@ public class Vehicle {
         public Vehicle createVehicle() {
             return new Vehicle(this);
         }
+
+        public VehicleBuilder copy(Vehicle vehicle) {
+            return this;
+        }
     }
 }

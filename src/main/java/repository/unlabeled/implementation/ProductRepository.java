@@ -47,9 +47,11 @@ public class ProductRepository implements ProductRepositoryInterface {
     }
 
     @Override
-    public void delete(Integer myID) {
+    public boolean delete(Integer myID) {
         Product product = read(myID);
         if (product != null) this.productDB.remove(product);
+        return this.productDB.remove(product);
 
     }
+
 }

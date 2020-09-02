@@ -74,5 +74,9 @@ public class Destination {
 
         public Destination build() { return new Destination(this);
         }
+
+        public DestinationBuilder copy(Destination destination) {
+            return this;
+        }
     }
 }

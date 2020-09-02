@@ -16,6 +16,7 @@ public class EmployerFactoryTest {
         String actual = lastNam + firstNam;
 
         Assert.assertEquals("Creates a Employer Object", expected,actual);
+        System.out.println("Employer Details: " + myEmployer);
 
 
     }

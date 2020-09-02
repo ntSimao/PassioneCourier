@@ -1,7 +1,6 @@
 package repository.tool.implementation;
 
 import Entity.tool.Device;
-import Entity.unlabeled.Route;
 import repository.tool.DeviceRepositoryInterface;
 import java.util.HashSet;
 import java.util.Set;
@@ -51,10 +50,16 @@ public class DeviceRepository implements DeviceRepositoryInterface {
     }
 
     @Override
-    public void delete(Integer myID) {
+    public boolean delete(Integer myID) {
         Device myDevice = read(myID);
         if(myDevice != null){
-            this.devDatabase.remove(myID);
+             this.devDatabase.remove(myID);
         }
+        return this.devDatabase.remove(myID);
+    }
+
+    @Override
+    public Set<Device> getAll() {
+        return this.devDatabase;
     }
 }

@@ -4,6 +4,7 @@ import Entity.tool.Device;
 import Entity.user.Employer;
 import Factory.tool.DeviceFactory;
 import Factory.user.EmployerFactory;
+import org.junit.Assert;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runners.MethodSorters;
@@ -21,27 +22,35 @@ public class EmployerRepositoryTest {
         private static Employer myEmployer = EmployerFactory.createEmployer("Pucci", "Enrico");
 
     @Test
-    public void create() {
+    public void a_create() {
         Employer employer00 = myRepository.create(myEmployer);
-        assertEquals(myEmployer.getEmployerId(), employer00.getEmployerId());
+        Assert.assertEquals(myEmployer.getEmployerId(), employer00.getEmployerId());
+        System.out.println("Employer created: " + employer00);
     }
 
     @Test
-    public void read() {
+    public void b_read() {
         Employer employer01 = myRepository.read(myEmployer.getEmployerId());
-        assertEquals(myEmployer.getEmployerId(), employer01.getEmployerId());
+        System.out.println("Read: " + employer01);
     }
 
     @Test
-    public void update() {
+    public void c_update() {
         Employer employer02 = new Employer.EmployerBuilder().copy(myEmployer).setLastName("Joestar").setFirstName("Joseph").build();
         employer02 = myRepository.update(employer02);
-        assertEquals(myEmployer.getEmployerId(), employer02.getEmployerId());
-        assertNotEquals(myEmployer.getEmployerId(), employer02.getEmployerId());
+        System.out.println("Updated: " + employer02);
     }
 
     @Test
-    public void delete() {
+    public void e_delete() {
         myRepository.delete(myEmployer.getEmployerId());
     }
+
+    @Test
+    public void d_getAll() {
+        System.out.println("Get all results " + myRepository.getAll());
+    }
+
+
 }
+
