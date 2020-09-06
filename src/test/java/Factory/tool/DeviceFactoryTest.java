@@ -14,6 +14,7 @@ public class DeviceFactoryTest {
         String actual = myDevice.getType();
 
         Assert.assertEquals("Creates a Device Object", expected,actual);
+        System.out.println("Device Details: " + myDevice);
 
     }
 }

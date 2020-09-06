@@ -45,11 +45,12 @@ public class RouteRepository implements RouteRepositoryInterface {
     }
 
     @Override
-    public void delete(Integer myID) {
+    public boolean delete(Integer myID) {
         Route myRoute = read(myID);
         if(myRoute != null){
             this.routeDB.remove(myID);
         }
+        return this.routeDB.remove(myID);
     }
 
     @Override

@@ -48,10 +48,12 @@ public class DriverRepository implements DriverRepositoryInterface {
     }
 
     @Override
-    public void delete(Integer myID) {
+    public boolean delete(Integer myID) {
         Driver driver = read(myID);
         if(driver !=null){
             this.driverDatabase.remove(driver);
         }
+        return this.driverDatabase.remove(driver);
     }
+
 }
