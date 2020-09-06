@@ -15,6 +15,15 @@ public class ProductRepository implements ProductRepositoryInterface {
         this.productDB = new HashSet<>();
     }
 
+    private static ProductRepositoryInterface myProductRepository = null;
+
+    public static ProductRepositoryInterface getMyProductRepository() {
+        if (myProductRepository == null) {
+            myProductRepository = new ProductRepository();
+        }
+        return new ProductRepository();
+    }
+
     @Override
     public Set<Product> getAll() {
         return this.productDB;
@@ -29,9 +38,9 @@ public class ProductRepository implements ProductRepositoryInterface {
     @Override
     public Product read(Integer myID) {
         Product product = null;
-        for (Product p : this.productDB){
-                product = p;
-                break;
+        for (Product p : this.productDB) {
+            product = p;
+            break;
         }
         return product;
     }
@@ -39,7 +48,7 @@ public class ProductRepository implements ProductRepositoryInterface {
     @Override
     public Product update(Product t) {
         Product oldProduct = read(t.getProduct_ID());
-        if (oldProduct != null){
+        if (oldProduct != null) {
             this.productDB.remove(oldProduct);
             this.productDB.add(t);
         }
