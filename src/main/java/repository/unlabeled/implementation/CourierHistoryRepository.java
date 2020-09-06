@@ -15,6 +15,15 @@ public class CourierHistoryRepository implements CourierHistoryRepositoryInterfa
         this.courierHistoryDB = new HashSet<>();
     }
 
+    private static CourierHistoryRepositoryInterface myCourierHistoryRepository = null;
+
+    public static CourierHistoryRepositoryInterface getMyCourierHistoryRepository() {
+        if (myCourierHistoryRepository == null) {
+            myCourierHistoryRepository = new CourierHistoryRepository();
+        }
+        return new CourierHistoryRepository();
+    }
+
     @Override
     public Set<CourierHistory> getAll() {
         return this.courierHistoryDB;
@@ -29,7 +38,7 @@ public class CourierHistoryRepository implements CourierHistoryRepositoryInterfa
     @Override
     public CourierHistory read(Character myID) {
         CourierHistory courierHistory = null;
-        for (CourierHistory c : this.courierHistoryDB){
+        for (CourierHistory c : this.courierHistoryDB) {
             courierHistory = c;
             break;
         }
@@ -39,7 +48,7 @@ public class CourierHistoryRepository implements CourierHistoryRepositoryInterfa
     @Override
     public CourierHistory update(CourierHistory t) {
         CourierHistory oldCourierHistory = read(t.getName());
-        if (oldCourierHistory != null){
+        if (oldCourierHistory != null) {
             this.courierHistoryDB.remove(oldCourierHistory);
             this.courierHistoryDB.add(t);
         }
