@@ -44,6 +44,6 @@ public class DriverService implements DriverServiceInterface {
 
     @Override
     public boolean delete(Integer myID) {
-        return false;
+        return this.repo.delete(myID);
     }
 }
