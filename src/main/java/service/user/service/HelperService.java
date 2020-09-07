@@ -1,17 +1,18 @@
 package service.user.service;
 
 import Entity.user.Helper;
-import repository.user.EmployerRepositoryInterface;
 import repository.user.HelperRepositoryInterface;
-import repository.user.implementation.EmployerRepository;
 import repository.user.implementation.HelperRepository;
-import service.user.EmployerServiceInterface;
 import service.user.HelperServiceInterface;
 
 import java.util.Set;
 
-//public class HelperService implements HelperRepositoryInterface{
 /*
+
+** Errors with getHelper Service, uncertain as to why.
+
+public class HelperService implements HelperRepositoryInterface{
+
     private static HelperServiceInterface serviceInterface = null;
     private HelperRepositoryInterface repositoryInterface;
 
@@ -27,7 +28,7 @@ import java.util.Set;
 */
 public class HelperService implements HelperServiceInterface {
 
-    public static HelperServiceInterface myService = null;
+    public static HelperServiceInterface helperServiceInterface = null;
     private HelperRepositoryInterface helperRepositoryInterface;
 
     public HelperService(){
@@ -35,10 +36,10 @@ public class HelperService implements HelperServiceInterface {
     }
 
     public static HelperServiceInterface getEmployerService(){
-        if(myService == null){
-            myService = new HelperService();
+        if(helperServiceInterface == null){
+            helperServiceInterface = new HelperService();
         }
-        return myService;
+        return helperServiceInterface;
     }
 
 
