@@ -4,9 +4,10 @@ import com.PassioneCourier.group2.Entity.user.Driver;
 import com.PassioneCourier.group2.repository.user.DriverRepositoryInterface;
 import com.PassioneCourier.group2.repository.user.implementation.DriverRepository;
 import com.PassioneCourier.group2.service.user.DriverServiceInterface;
+import org.springframework.stereotype.Service;
 
 import java.util.Set;
-
+@Service
 public class DriverService implements DriverServiceInterface {
     public static DriverServiceInterface service = null;
     private DriverRepositoryInterface repo;
