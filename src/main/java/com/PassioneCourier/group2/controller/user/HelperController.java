@@ -8,32 +8,39 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Set;
 
 @RestController
+@RequestMapping("/helper")
 public class HelperController {
 
     @Autowired
     private HelperService helperService;
 
-    @RequestMapping("/helper")
+    public String welcome(){
+    return "helper.. welcome";
+    }
+
+
+    @RequestMapping(value = "/read/{iD}", method = RequestMethod.GET)
+    public Helper read(@PathVariable Integer iD){
+        return helperService.read(iD);
+    }
+
+    @RequestMapping(value = "/create", method = RequestMethod.POST)
+    public Helper create(@RequestBody Helper h){
+
+        return helperService.create(h);
+    }
+    @RequestMapping(value = "/update", method = RequestMethod.POST)
+    public Helper update(@RequestBody Helper u){
+
+        return helperService.update(u);
+    }
+
+    @RequestMapping(value = "/getall", method = RequestMethod.GET)
     public Set<Helper> getAll() {
 
         return helperService.getAll();
     }
 
-    @RequestMapping("/helper/{iD}")
-    public Helper read(@PathVariable Integer iD){
-        return helperService.read(iD);
-    }
-
-    @RequestMapping(value = "/helper/create", method = RequestMethod.POST)
-    public Helper create(@RequestBody Helper h){
-
-        return helperService.create(h);
-    }
-    @RequestMapping(value = "/helper", method = RequestMethod.PUT)
-    public Helper update(@RequestBody Helper u){
-
-        return helperService.update(u);
-    }
     @RequestMapping(value = "/helper/{d}", method = RequestMethod.DELETE)
     public boolean delete(@PathVariable Integer d){
 
