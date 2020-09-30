@@ -13,6 +13,7 @@ import static org.junit.Assert.*;
 public class HelperRepositoryTest {
 
     private static HelperRepositoryInterface helperRepository = HelperRepository.getHelperRepo();
+
     Helper helper = HelperFactory.createHelper(
             1,
             "Jon Smae",
@@ -30,20 +31,23 @@ public class HelperRepositoryTest {
 
         Helper helper1 = helperRepository.create(helper);
         assertEquals(helper.getHelperID(), helper1.getHelperID());
+        System.out.println(helper1.toString());
     }
 
     @Test
     public void read() {
 
         Helper helperFind = helperRepository.read(helper.getHelperID());
-        assertEquals(helper.getHelperID(), helperFind.getHelperID());
+        System.out.println(helperFind);
     }
 
     @Test
     public void update() {
 
-        Helper helperUpdate = new Helper.Builder().copy(helper).build();
+        Helper helperUpdate = new Helper.Builder().copy(helper).setName("Johaan").build();
         helperUpdate = helperRepository.update(helperUpdate);
+        System.out.println(helperUpdate + "\n");
+
     }
 
     @Test
@@ -54,6 +58,7 @@ public class HelperRepositoryTest {
 
     @Test
     public void getAll() {
+        System.out.println("All Helpers: ");
         helperRepository.getAll();
     }
 }

@@ -30,5 +30,4 @@ public class DeviceController {
         return deviceService.getAll();
     }
 
-
 }

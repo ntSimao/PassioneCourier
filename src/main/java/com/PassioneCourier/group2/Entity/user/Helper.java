@@ -17,6 +17,9 @@ public class Helper {
     private boolean income;
     private LocalDate DOB;
 
+    private Helper() {
+    }
+
     private Helper(Builder builder) {
 
         this.helperID = builder.helperID;
@@ -67,11 +70,6 @@ public class Helper {
         return DOB;
     }
 
-    public void loadVehicle(){
-    }
-
-    public void fillLog(){
-    }
 
     @Override
     public String toString() {
