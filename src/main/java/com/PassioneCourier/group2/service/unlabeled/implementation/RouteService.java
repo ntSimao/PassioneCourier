@@ -4,9 +4,11 @@ import com.PassioneCourier.group2.Entity.unlabeled.Route;
 import com.PassioneCourier.group2.repository.unlabeled.RouteRepositoryInterface;
 import com.PassioneCourier.group2.repository.unlabeled.implementation.RouteRepository;
 import com.PassioneCourier.group2.service.unlabeled.RouteServiceInterface;
+import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
+@Service
 public class RouteService implements RouteServiceInterface {
 
     private static RouteServiceInterface service = null;

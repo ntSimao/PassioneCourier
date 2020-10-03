@@ -1,8 +1,12 @@
 package com.PassioneCourier.group2.Entity.unlabeled;
 
-public class Route {
+import java.io.Serializable;
+
+public class Route implements Serializable {
 
     private int route_id, product_id, from_location_id, to_location_id, price, days;
+
+    private Route(){}
 
     private Route(Builder builder){
         this.route_id = builder.route_id;
