@@ -8,6 +8,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class PassioneCourierApplication {
 
     public static void main(String[] args){
-        SpringApplication.run(PassioneCourierApplication.class, args);
+         SpringApplication.run(PassioneCourierApplication.class, args);
     }
 }
