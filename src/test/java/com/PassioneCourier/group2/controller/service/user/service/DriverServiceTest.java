@@ -8,13 +8,15 @@ import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runners.MethodSorters;
 import com.PassioneCourier.group2.service.user.DriverServiceInterface;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.time.LocalDate;
 
 import static org.junit.Assert.*;
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class DriverServiceTest {
-    private static DriverServiceInterface service = DriverService.getService();
+    @Autowired
+    private DriverServiceInterface service;
     private static Driver driver = DriverFactory.createDriver("yaseen","CA912345","yaseen@gmail.com",
             "+2781234567","14 long street, Cape Town", "ylevy","password",
             200.00, LocalDate.parse("1999/21/07"));
@@ -30,7 +32,7 @@ public class DriverServiceTest {
 
     @Test
     public void b_read() {
-        Driver read = service.read(driver.getDriver_ID());
+        Driver read = service.read(Integer.valueOf(driver.getDriver_ID()));
         System.out.println("Read: " + read);
     }
 
@@ -48,6 +50,6 @@ public class DriverServiceTest {
     @Test
     public void e_delete() {
         service.delete(driver.getDriver_ID());
-        assertEquals(0,driver.getDriver_ID());
+        assertEquals("",driver.getDriver_ID());
     }
 }

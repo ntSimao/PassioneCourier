@@ -1,10 +1,10 @@
 package com.PassioneCourier.group2.repository.user.implementation;
-
+/*
 import com.PassioneCourier.group2.Entity.user.Driver;
 import com.PassioneCourier.group2.repository.user.DriverRepositoryInterface;
 
 import java.util.Set;
-
+@Deprecated
 public class DriverRepository implements DriverRepositoryInterface {
 
     private static DriverRepository repo = null;
@@ -57,3 +57,4 @@ public class DriverRepository implements DriverRepositoryInterface {
     }
 
 }
+*/

@@ -1,11 +1,15 @@
 package com.PassioneCourier.group2.Entity.user;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
 import java.time.LocalDate;
 
+@Entity
 public class Driver {
 
     //instance
-    private int driver_ID;
+    @Id
+    private String driver_ID;
     private String name,license,mobile,email,address,userName,password;
     private double income;
     private LocalDate DOB;
@@ -23,12 +27,16 @@ public class Driver {
 
     }
 
+    protected Driver() {
+
+    }
+
     private void fillLog(){
         //need more clarification on what this method does
     }
 
     //getters
-    public int getDriver_ID() {
+    public String getDriver_ID() {
         return driver_ID;
     }
 
@@ -85,7 +93,7 @@ public class Driver {
     public static class DriverBuilder
 
     {
-        private int driver_ID;
+        private String driver_ID;
         private String name,license,mobile,email,address,userName,password;
         private double income;
         private LocalDate DOB;
@@ -94,7 +102,7 @@ public class Driver {
             this.name = name;
         return this;}
 
-        public DriverBuilder setDriver_ID(int driver_ID) {
+        public DriverBuilder setDriver_ID(String driver_ID) {
             this.driver_ID = driver_ID;
         return this;}
 

@@ -42,7 +42,7 @@ public class CourierHistoryService implements CourierHistoryServiceInterface {
     }
 
     @Override
-    public boolean delete(Integer myID) {
+    public boolean delete(String myID) {
         return false; //return this.repositoryInterface.delete(myID);
     }
 }

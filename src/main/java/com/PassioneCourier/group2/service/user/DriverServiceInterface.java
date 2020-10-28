@@ -5,6 +5,6 @@ import com.PassioneCourier.group2.service.IService;
 
 import java.util.Set;
 
-public interface DriverServiceInterface extends IService<Driver, Integer> {
+public interface DriverServiceInterface extends IService<Driver, String> {
     Set<Driver> getAll();
 }

@@ -42,7 +42,7 @@ public class ProductService implements ProductServiceInterface {
     }
 
     @Override
-    public boolean delete(Integer myID) {
+    public boolean delete(String myID) {
         return this.repositoryInterface.delete(myID);
     }
 }
