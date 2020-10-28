@@ -1,5 +1,5 @@
 package com.PassioneCourier.group2.controller.repository.user.implementation;
-
+/*
 import com.PassioneCourier.group2.Entity.user.Driver;
 import com.PassioneCourier.group2.Factory.user.DriverFactory;
 import com.PassioneCourier.group2.repository.user.implementation.DriverRepository;
@@ -12,6 +12,7 @@ import com.PassioneCourier.group2.repository.user.DriverRepositoryInterface;
 import java.time.LocalDate;
 
 import static org.junit.Assert.*;
+@Deprecated
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class DriverRepositoryTest {
 
@@ -52,3 +53,4 @@ public class DriverRepositoryTest {
          assertEquals(0,driver.getDriver_ID());
     }
 }
+*/
