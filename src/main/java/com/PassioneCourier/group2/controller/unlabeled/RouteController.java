@@ -26,15 +26,11 @@ public class RouteController {
         return routeService.read(id);
     }
     @PostMapping("/update")
-    public Route update(@RequestBody Route route){
-        return routeService.update(route);
-    }
+    public Route update(@RequestBody Route route){ return routeService.update(route); }
     @GetMapping("/all")
     public Set<Route> getAll(){
         return routeService.getAll();
     }
     @DeleteMapping("/delete/{id}")
-    public boolean delete(@PathVariable Integer id){
-        return routeService.delete(id);
-    }
+    public boolean delete(@PathVariable Integer id){ return routeService.delete(id.toString()); }
 }

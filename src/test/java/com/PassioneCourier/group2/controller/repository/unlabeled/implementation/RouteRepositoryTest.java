@@ -1,4 +1,4 @@
-package com.PassioneCourier.group2.controller.repository.unlabeled.implementation;
+/*package com.PassioneCourier.group2.controller.repository.unlabeled.implementation;
 
 import com.PassioneCourier.group2.Entity.unlabeled.Route;
 import com.PassioneCourier.group2.Factory.unlabeled.RouteFactory;
@@ -38,7 +38,7 @@ public class RouteRepositoryTest {
     @Test
     public void e_delete() {
         /*Route deleted = myRepo.delete(myRoute.getRoute_id());
-        Assert.assertEquals(false, deleted);*/
+        Assert.assertEquals(false, deleted);***
         myRepo.delete(myRoute.getRoute_id());
         System.out.println("Deleted: " + myRoute.getRoute_id() + ", " + myRoute.getPrice() + ", " + myRoute.getDays());
     }
@@ -47,4 +47,4 @@ public class RouteRepositoryTest {
     public void d_getAll() {
         System.out.println("Get all: " + myRepo.getAll());
     }
-}
+}*/

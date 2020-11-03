@@ -1,12 +1,18 @@
 package com.PassioneCourier.group2.Entity.unlabeled;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
 import java.io.Serializable;
+import java.util.Objects;
 
+@Entity
 public class Route implements Serializable {
 
-    private int route_id, product_id, from_location_id, to_location_id, price, days;
+    @Id
+    private int route_id;
+    private int product_id, from_location_id, to_location_id, price, days;
 
-    private Route(){}
+    protected Route(){}
 
     private Route(Builder builder){
         this.route_id = builder.route_id;
@@ -95,6 +101,19 @@ public class Route implements Serializable {
         public Route build(){
             return new Route( this);
         }
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Route route = (Route) o;
+        return route_id == route.route_id;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(route_id);
     }
 }
 

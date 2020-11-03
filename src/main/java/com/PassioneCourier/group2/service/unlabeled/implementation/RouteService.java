@@ -2,49 +2,46 @@ package com.PassioneCourier.group2.service.unlabeled.implementation;
 
 import com.PassioneCourier.group2.Entity.unlabeled.Route;
 import com.PassioneCourier.group2.repository.unlabeled.RouteRepositoryInterface;
-import com.PassioneCourier.group2.repository.unlabeled.implementation.RouteRepository;
 import com.PassioneCourier.group2.service.unlabeled.RouteServiceInterface;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
+import java.util.stream.Collectors;
 
 @Service
 public class RouteService implements RouteServiceInterface {
 
-    private static RouteServiceInterface service = null;
+    @Autowired
     private RouteRepositoryInterface repositoryInterface;
-
-    private RouteService(){
-        this.repositoryInterface = RouteRepository.getRepository();
-    }
-
-    public static RouteServiceInterface getServiceInterface(){
-        if (service == null) service = new RouteService();
-        return service;
-    }
 
     @Override
     public Route create(Route t) {
-        return this.repositoryInterface.create(t);
+        return this.repositoryInterface.save(t);
     }
 
     @Override
     public Route read(Integer myID) {
-        return this.repositoryInterface.read(myID);
+        return this.repositoryInterface.findById(myID).orElseGet(null);
     }
 
     @Override
     public Route update(Route t) {
-        return this.repositoryInterface.update(t);
+        if(this.repositoryInterface.existsById(t.getRoute_id())) {
+            return this.repositoryInterface.save(t);
+        }
+        return null;
     }
 
     @Override
-    public boolean delete(Integer myID) {
-        return this.repositoryInterface.delete(myID);
+    public boolean delete(String myID) {
+        this.repositoryInterface.deleteById(myID);
+            if(this.repositoryInterface.existsById(myID)) return false;
+            else return true;
     }
 
     @Override
     public Set<Route> getAll() {
-        return this.repositoryInterface.getAll();
+        return this.repositoryInterface.findAll().stream().collect(Collectors.toSet());
     }
 }
