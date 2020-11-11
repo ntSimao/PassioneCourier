@@ -15,7 +15,7 @@ public class HelperFactoryTest {
     public void createHelper() {
 
         Helper helper = HelperFactory.createHelper(
-                1,
+                "1",
                 "Jon Smae",
                 "02182004747",
                 "realjon@com.com",

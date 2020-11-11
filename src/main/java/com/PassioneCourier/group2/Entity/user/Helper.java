@@ -1,5 +1,7 @@
 package com.PassioneCourier.group2.Entity.user;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
 import java.time.*;
 
 /**
@@ -10,14 +12,17 @@ import java.time.*;
  *
  * */
 
+@Entity
 public class Helper {
 
-    private int helperID;
+    @Id
+    private String helperID;
+
     private String name, mobile, email, address, userName, password;
     private boolean income;
     private LocalDate DOB;
 
-    private Helper() {
+    protected Helper() {
     }
 
     private Helper(Builder builder) {
@@ -34,7 +39,7 @@ public class Helper {
 
     }
 
-    public int getHelperID() {
+    public String getHelperID() {
         return helperID;
     }
 
@@ -88,12 +93,12 @@ public class Helper {
 
     public static class Builder{
 
-        private int helperID;
+        private String helperID;
         private String name, mobile, email, address, userName, password;
         private boolean income;
         private LocalDate DOB;
 
-        public Builder setHelperID(int helperID){
+        public Builder setHelperID(String helperID){
 
             this.helperID = helperID;
             return this;

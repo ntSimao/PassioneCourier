@@ -1,5 +1,5 @@
 package com.PassioneCourier.group2.repository.user.implementation;
-
+/*
 import com.PassioneCourier.group2.Entity.user.Helper;
 import com.PassioneCourier.group2.repository.user.HelperRepositoryInterface;
 
@@ -65,3 +65,4 @@ public class HelperRepository implements HelperRepositoryInterface {
         return this.helpDatabase;
     }
 }
+*/
