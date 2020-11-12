@@ -46,7 +46,7 @@ public class EmployerService implements EmployerServiceInterface {
     }
 
     @Override
-    public boolean delete(String myID) {
+    public boolean delete(Integer myID) {
         return this.myRepository.delete(myID);
 
     }

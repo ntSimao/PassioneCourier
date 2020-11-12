@@ -51,7 +51,7 @@ public class HelperService implements HelperServiceInterface {
     }
 
     @Override
-    public boolean delete(String myID) {
+    public boolean delete(Integer myID) {
         //
         return helperRepositoryInterface.delete(myID);
     }

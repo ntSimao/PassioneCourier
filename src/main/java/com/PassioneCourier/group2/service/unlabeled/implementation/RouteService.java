@@ -39,7 +39,7 @@ public class RouteService implements RouteServiceInterface {
     }
 
     @Override
-    public boolean delete(String myID) {
+    public boolean delete(Integer myID) {
         return this.repositoryInterface.delete(myID);
     }
 

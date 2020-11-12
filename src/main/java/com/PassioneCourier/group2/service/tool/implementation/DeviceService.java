@@ -47,7 +47,7 @@ public class DeviceService implements DeviceServiceInterface {
     }
 
     @Override
-    public boolean delete(String myID) { return this.myRepository.delete(myID);
+    public boolean delete(Integer myID) { return this.myRepository.delete(myID);
 
 
     }

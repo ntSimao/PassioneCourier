@@ -49,7 +49,7 @@ public class DriverServiceTest {
 
     @Test
     public void e_delete() {
-        service.delete(driver.getDriver_ID());
+        service.delete(Integer.valueOf(driver.getDriver_ID()));
         assertEquals("",driver.getDriver_ID());
     }
 }
