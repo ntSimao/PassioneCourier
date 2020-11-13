@@ -5,5 +5,5 @@ public interface IService<Type, ID> {
     Type create(Type t);
     Type read(String myID);
     Type update(Type t);
-    boolean delete(String myID);
+    boolean delete(Integer myID);
 }

@@ -37,15 +37,11 @@ public class DriverService implements DriverServiceInterface {
     }
 
     @Override
-    /*public Driver read(Integer myID) {
-        return null;
-    }*/
-
-
-
     public Driver read(String myID) {
-        return this.repo.findById(myID).orElseGet(null);
+        return null;
     }
+
+
 
     @Override
     public Driver update(Driver t) {
@@ -53,7 +49,7 @@ public class DriverService implements DriverServiceInterface {
     }
 
     @Override
-    public boolean delete(String myID) {
+    public boolean delete(Integer myID) {
         this.repo.deleteById(myID);
         if (this.repo.existsById(myID))
             return false;

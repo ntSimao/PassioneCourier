@@ -2,25 +2,20 @@ package com.PassioneCourier.group2.service.user.service;
 
 import com.PassioneCourier.group2.Entity.user.Helper;
 import com.PassioneCourier.group2.repository.user.HelperRepositoryInterface;
-//import com.PassioneCourier.group2.repository.user.implementation.HelperRepository;
+import com.PassioneCourier.group2.repository.user.implementation.HelperRepository;
 import com.PassioneCourier.group2.service.user.HelperServiceInterface;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.HashSet;
 import java.util.Set;
-import java.util.stream.Collectors;
 
 @Service
 public class HelperService implements HelperServiceInterface {
 
-    @Autowired
+    public static HelperServiceInterface helperServiceInterface = null;
     private HelperRepositoryInterface helperRepositoryInterface;
 
-    //public static HelperServiceInterface helperServiceInterface = null;
-
-    /*private HelperService(){
-
+    public HelperService(){
+        //
         this.helperRepositoryInterface = HelperRepository.getHelperRepo();
     }
 
@@ -29,45 +24,35 @@ public class HelperService implements HelperServiceInterface {
             helperServiceInterface = new HelperService();
         }
         return helperServiceInterface;
-    }*/
+    }
 
     @Override
     public Set<Helper> getAll() {
-        //return helperRepositoryInterface.findAll().stream().collect(Collectors.toSet());
-        return new HashSet<>(helperRepositoryInterface.findAll());
+        //
+        return helperRepositoryInterface.getAll();
     }
 
     @Override
     public Helper create(Helper t) {
         //
-        return this.helperRepositoryInterface.save(t);
+        return helperRepositoryInterface.create(t);
     }
 
     @Override
-    public Helper read(String myID) {
-
-        return this.helperRepositoryInterface.findById(Integer.valueOf(myID)).orElseGet(null);
+    public Helper read(Integer myID) {
+        //
+        return helperRepositoryInterface.read(myID);
     }
 
     @Override
     public Helper update(Helper t) {
-
-        if (this.helperRepositoryInterface.existsById(Integer.valueOf(t.getHelperID()))){
-
-            return this.helperRepositoryInterface.save(t);
-        }
-        else
-            return null;
+        //
+        return helperRepositoryInterface.update(t);
     }
-
 
     @Override
     public boolean delete(String myID) {
-
-        this.helperRepositoryInterface.deleteById(Integer.valueOf(myID));
-        if (this.helperRepositoryInterface.existsById(Integer.valueOf(myID))){
-            return false;
-        }
-        else return true;
+        //
+        return helperRepositoryInterface.delete(myID);
     }
 }

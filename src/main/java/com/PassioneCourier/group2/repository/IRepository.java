@@ -5,6 +5,6 @@ public interface  IRepository<Type, ID> {
     Type create(Type t);
     Type read(ID myID);
     Type update(Type t);
-    boolean delete(ID myID);
+    boolean delete(Integer myID);
 
 }
