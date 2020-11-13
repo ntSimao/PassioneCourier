@@ -29,7 +29,7 @@ public class HelperControllerTest {
     private String baseUrl = "http://Localhost:8080/helper/";
 
     Helper helper = HelperFactory.createHelper(
-            1,
+            "1",
             "Jon Smae",
             "02182004747",
             "realjon@com.com",

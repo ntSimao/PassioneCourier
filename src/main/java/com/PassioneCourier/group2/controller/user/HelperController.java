@@ -20,7 +20,7 @@ public class HelperController {
 
 
     @RequestMapping(value = "/read/{iD}", method = RequestMethod.GET)
-    public Helper read(@PathVariable Integer iD){
+    public Helper read(@PathVariable String iD){
         return helperService.read(iD);
     }
 

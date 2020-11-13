@@ -6,7 +6,7 @@ import java.time.LocalDate;
 
 public class HelperFactory {
 
-    public static Helper createHelper(int helperID, String name, String mobile, String email, String address, String userName, String password, boolean income, LocalDate DOB){
+    public static Helper createHelper(String helperID, String name, String mobile, String email, String address, String userName, String password, boolean income, LocalDate DOB){
 
         Helper helper = new Helper.Builder()
                 .setHelperID(helperID)

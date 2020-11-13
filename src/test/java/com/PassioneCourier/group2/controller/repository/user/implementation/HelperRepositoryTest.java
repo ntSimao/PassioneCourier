@@ -1,5 +1,5 @@
 package com.PassioneCourier.group2.controller.repository.user.implementation;
-
+/*
 import com.PassioneCourier.group2.Entity.user.Helper;
 import com.PassioneCourier.group2.Factory.user.HelperFactory;
 import com.PassioneCourier.group2.repository.user.implementation.HelperRepository;
@@ -62,3 +62,4 @@ public class HelperRepositoryTest {
         helperRepository.getAll();
     }
 }
+*/

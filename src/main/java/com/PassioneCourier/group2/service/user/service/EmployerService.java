@@ -14,6 +14,7 @@ public class EmployerService implements EmployerServiceInterface {
     private EmployerRepositoryInterface myRepository;
 
     public EmployerService(){
+
         this.myRepository = EmployerRepository.getMyEmployerRepository();
     }
 
