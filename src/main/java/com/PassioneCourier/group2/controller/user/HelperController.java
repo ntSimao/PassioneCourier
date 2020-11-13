@@ -42,7 +42,7 @@ public class HelperController {
     }
 
     @RequestMapping(value = "/helper/{d}", method = RequestMethod.DELETE)
-    public boolean delete(@PathVariable Integer d){
+    public boolean delete(@PathVariable String d){
 
         return helperService.delete(d);
     }
