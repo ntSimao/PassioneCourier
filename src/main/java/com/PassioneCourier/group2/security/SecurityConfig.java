@@ -37,7 +37,14 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http.httpBasic()
                 .and()
                 .authorizeRequests()
-                .antMatchers(HttpMethod.POST,"/passionecourrier/**/create","/passionecourrier/**/delete").hasRole(ADMIN_ROLE)
+                .antMatchers(HttpMethod.POST,
+                        "/passionecourrier/helper/**",
+                                   "/passionecourrier/driver/**",
+                                   "/passionecourrier/adminstration/**").hasRole(ADMIN_ROLE)
+                .antMatchers(HttpMethod.POST,
+                        "/passionecourrier/**/delivery").hasRole(DRIVER_ROLE)
+                .antMatchers(HttpMethod.POST,
+                        "/passionecourrier/", "/venezia.polpo").permitAll()
                 .and()
                 .csrf().disable();
     }

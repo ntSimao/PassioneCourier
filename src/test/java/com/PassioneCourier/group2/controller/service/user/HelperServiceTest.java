@@ -57,7 +57,7 @@ public class HelperServiceTest {
     @Test
     public void delete() {
 
-        boolean deletedHelper = helperServiceInterface.delete(helper.getHelperID());
+        boolean deletedHelper = helperServiceInterface.delete(Integer.valueOf(helper.getHelperID()));
 
     }
 

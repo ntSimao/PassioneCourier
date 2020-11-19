@@ -32,7 +32,7 @@ public class DriverServiceTest {
 
     @Test
     public void b_read() {
-        Driver read = service.read(Integer.valueOf(driver.getDriver_ID()));
+        Driver read = service.read(driver.getDriver_ID());
         System.out.println("Read: " + read);
     }
 
