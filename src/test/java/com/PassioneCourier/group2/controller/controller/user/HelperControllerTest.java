@@ -24,11 +24,10 @@ import static org.junit.Assert.*;
 //@RequestMapping("/helper")
 public class HelperControllerTest {
 
-    @Autowired
-    private TestRestTemplate testRestTemplate;
-    private String baseUrl = "http://Localhost:8080/helper/";
 
-    Helper helper = HelperFactory.createHelper(
+    private static String USER_NAME = "Admin";
+    private static String PASSWORD = "access1";
+    private Helper helper = HelperFactory.createHelper(
             "1",
             "Jon Smae",
             "02182004747",
@@ -39,15 +38,23 @@ public class HelperControllerTest {
             true,
             LocalDate.of(1990, 11, 17));
 
+
+    @Autowired
+    private TestRestTemplate testRestTemplate;
+    private String baseUrl = "http://Localhost:8080/helper/";
+
     @Test
     public void create() {
 
         String url = baseUrl + "create/";
         System.out.println(url);
 
-        ResponseEntity<Helper> postResponseEntity = testRestTemplate.postForEntity(url, helper,Helper.class);
-        Assert.assertNotNull("abc", postResponseEntity);
-        Assert.assertNotNull("bbb", postResponseEntity.getBody());
+        ResponseEntity<Helper> postResponseEntity = testRestTemplate
+                .withBasicAuth(USER_NAME, PASSWORD)
+                .postForEntity(url, helper,Helper.class);
+
+        Assert.assertNotNull(postResponseEntity);
+        Assert.assertNotNull(postResponseEntity.getBody());
 
         System.out.println(postResponseEntity);
         System.out.println(postResponseEntity.getBody());
@@ -62,7 +69,9 @@ public class HelperControllerTest {
 
         HttpHeaders headers = new HttpHeaders();
         HttpEntity <String> entity = new HttpEntity<>(null, headers);
-        ResponseEntity <String> getAllResponseEntity = testRestTemplate.exchange(url, HttpMethod.GET, entity, String.class);
+        ResponseEntity <String> getAllResponseEntity = testRestTemplate
+                .withBasicAuth(USER_NAME, PASSWORD)
+                .exchange(url, HttpMethod.GET, entity, String.class);
 
         System.out.println(getAllResponseEntity);
         System.out.println(getAllResponseEntity.getBody());
@@ -73,7 +82,10 @@ public class HelperControllerTest {
 
         String url = baseUrl + "read/" + helper.getHelperID();
         System.out.println(url);
-        ResponseEntity<Helper> readResponseEntity = testRestTemplate.getForEntity(url, Helper.class);
+        ResponseEntity<Helper> readResponseEntity = testRestTemplate
+                .withBasicAuth(USER_NAME, PASSWORD)
+                .getForEntity(url, Helper.class);
+
         Assert.assertEquals(helper.getHelperID(), readResponseEntity.getBody().getHelperID());
 
         System.out.println(readResponseEntity);
@@ -86,7 +98,9 @@ public class HelperControllerTest {
         Helper updatedHelper = new Helper.Builder().copy(helper).setName("Frank").build();
         String url = baseUrl + "update/";
         System.out.println(url);
-        ResponseEntity<Helper> updatedResponseEntity = testRestTemplate.postForEntity(url, updatedHelper,Helper.class);
+        ResponseEntity<Helper> updatedResponseEntity = testRestTemplate
+                .withBasicAuth(USER_NAME, PASSWORD)
+                .postForEntity(url, updatedHelper,Helper.class);
         /*
         Assert.assertEquals(helper.getHelperID(), updatedResponseEntity.getBody().getHelperID());
         /*
@@ -102,7 +116,7 @@ public class HelperControllerTest {
     public void delete() {
 
         String url = baseUrl + "delete/" + helper.getHelperID();
-        testRestTemplate.delete(url);
+        testRestTemplate.withBasicAuth(USER_NAME, PASSWORD).delete(url);
 
     }
 }
